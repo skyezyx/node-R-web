@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>读取本地文件</title>
+
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=1XjLLEhZhQNUzd93EjU5nOGQ"></script>
+    <link rel="stylesheet" href="stylesheets/txt.css" />
+
+</head>
+
+<body>
+    <div id="header-nav" align="right">
+        <nav>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="/index" target="_blank">首页</a></li>
+                <li><a href="/txt" target="_blank">使用文本文件</a></li>
+                <li><a href="/feixian" target="_blank">结果展示</a></li>
+                <li><a id="introduction">系统简介</a></li>
+                <li><a>联系我们</a></li>
+            </ul>
+        </nav>
+    </div>
+    <div id="allmap"></div>
+
+    <div class="menu">
+        <span class="show" onclick="togglePanel()">显示面板</span>
+        <span class="close" onclick="togglePanel()">收起</span>
+        <label>
+            <input type="text" id="keyword" value="合肥市" />
+            <button id="commitBtn" type="button">查看范围</button>
+        </label>
+        <label>
+            选择受灾点坐标文件
+            <input type='file' id="stxt" accept='text/plain' onchange='openFilea(event)'><br>
+        </label>
+        <label>
+            受灾点人数字段
+            <input type='text' id='srs' value="4"><br>
+            受灾点经度字段
+            <input type='text' id='slng' value="5"><br>
+            受灾点纬度字段
+            <input type='text' id='slat' value="6"><br>
+        </label>
+        <label>
+            选择避灾点坐标文件
+            <input type='file' accept='text/plain' onchange='openFileb(event)'><br>
+        </label>
+        <label>
+            避灾点容量字段
+            <input type='text' id='brl' value="5"><br>
+            避灾点经度字段
+            <input type='text' id='blng' value="1"><br>
+            避灾点纬度字段
+            <input type='text' id='blat' value="2"><br>
+        </label>
+        <label>
+            汽车载客量
+            <input type='text' id='zaikeliang' value="100"><br>
+        </label>
+        <span>
+            <label>
+                采用百度地图驾车路线距离
+                <input id="cardistance" type="checkbox">
+            </label>
+            <br />
+            <label>
+                采用两点间欧式距离
+                <input id="linedistance" type="checkbox">
+            </label>
+        </span>
+        <button id="btnlx" type="button">显示所有路线</button>
+        <button id="btnonelx" type="button">显示一条路线路线</button>
+        <button id="btnjs" type="button">计算</button>
+        <button><a id="feixian" href="/feixian" target="_blank" />结果展示</a></button>
+        <div id='divResult'>
+            <h3>结果</h3>
+            <textarea id='taResult' cols="50" rows="8">点击计算按钮获取疏散方案</textarea>
+            </textarea>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="javascripts/txt.js"></script>
+
+</body>
+
+</html>

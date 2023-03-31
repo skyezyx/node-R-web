@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+	<meta charset="utf-8">
+	<title>交互式输入页面</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+	<script src="http://api.map.baidu.com/api?v=1.0&type=webgl&ak=VdEuFgNbMyalXhesanUGL5EomtNBQFhm"></script>
+	<script src="https://mapv.baidu.com/gl/examples/static/common.js"></script>
+	<script src="https://mapv.baidu.com/build/mapv.min.js"></script>
+	<script src="https://code.bdstatic.com/npm/mapvgl@1.0.0-beta.156/dist/mapvgl.min.js"></script>
+	<!-- <link rel="stylesheet" href="stylesheets/bootstrap.min.css" /> -->
+	<link rel="stylesheet" href="stylesheets/index.css" />
+
+</head>
+
+<body>
+	<div id="header-nav" align="right">
+		<nav>
+			<ul class="nav navbar-nav navbar-right">
+				<li><a href="/index" target="_blank">首页</a></li>
+				<li><a href="/txt" target="_blank">使用文本文件</a></li>
+				<li><a href="/feixian" target="_blank">结果展示</a></li>
+				<li><a id="introduction">系统简介</a></li>
+				<li><a>联系我们</a></li>
+			</ul>
+		</nav>
+	</div>
+
+	<div id="map_container"></div>
+	<div class="menu">
+		<span class="show" onclick="togglePanel()">显示面板</span>
+		<span class="close" onclick="togglePanel()">收起</span>
+		<label>受灾点的人数(以“,”分隔)</label>
+		<textarea id='renshu'></textarea>
+		<label>安置点的容量(以“,”分隔)</label>
+		<textarea id='rongliang'></textarea>
+		<label>汽车载客量</label>
+		<textarea id='zaikeliang'>100</textarea>
+		<button id="addspoint">添加受灾点</button>
+		<button id="endspoint">结束添加受灾点</button>
+		<button id="addapoint">添加安置点</button>
+		<button id="endapoint">结束添加安置点</button>
+		<button id="btnclear" type="button">清空所有数据点</button>
+		<span>
+			<label>
+				采用百度地图驾车路线距离
+				<input id="cardistance" type="checkbox">
+			</label>
+			<br />
+			<label>
+				采用两点间欧式距离
+				<input id="linedistance" type="checkbox">
+			</label>
+		</span>
+		<button id="btnjs" type="button">计算</button>
+		<button><a id="feixian" href="/feixian" target="_blank" />结果展示</a></button>
+		<!-- <input type="text" id="keyword1" value="酒店"> -->
+		<!-- <input type="text" id="keyword2" value="加油站"> -->
+		<!-- <br /> -->
+		<!-- <button id="keywordsearch" onclick="keywordsearch()">关键词检索</button> -->
+		<div id='divResult'>
+			<h3>结果</h3>
+			<textarea id='taResult' cols="40" rows="8">点击计算按钮获取疏散方案</textarea>
+			</textarea>
+		</div>
+	</div>
+
+
+	<script type="text/javascript" src="javascripts/jquery.min.js"></script>
+	<script type="text/javascript" src="javascripts/index.js"></script>
+</body>
+
+</html>

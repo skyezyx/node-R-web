@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="stylesheets/bootstrap.min.css" />
+	<link rel="stylesheet" href="stylesheets/firstpage.css" />
+	<script type="text/javascript" src="javascripts/firstpage.js"></script>
+	<title>应急疏散系统</title>
+</head>
+
+<body>
+
+	<div id="header-nav" align="right">
+		<nav>
+			<ul class="nav navbar-nav navbar-right">
+				<li><a href="/index" target="_blank">首页</a></li>
+				<li><a id="introduction">系统简介</a></li>
+				<li><a>联系我们</a></li>
+			</ul>
+		</nav>
+	</div>
+
+	<div id="main">
+		<div id="text">
+			<div style="background: transparent;"><img src="img/yjssbig.png" /></div>
+			<!-- <div style="background: transparent;"><img src="img/yjssmiddle.png" /></div> -->
+			<div id="index">
+				<a href="/index" target="_blank">
+					进入地图
+				</a>
+			</div>
+		</div>
+	</div>
+
+	<!--系统简介页面-->
+	<div id="introductionwin"
+		style="display: none;position:absolute;z-index: 2; width: 50%;height: 50%;left: 25%;bottom: 30%;background:#CCCCCC;opacity: 0.95; border-radius: 14px;">
+		<span id="close">&times;</span>
+		<div id="login">
+			<h1>公共车辆应急疏散系统</h1>
+			<p>
+				&nbsp;&nbsp;&nbsp;&nbsp;本系统主要用于求解突发灾害下大规模人群的应急疏散问题，用于求解的算法模块集成了最近邻算法、基于线性规划的精确算法以及基于运输问题的启发式算法三种算法。请用户在地图页面输入受灾点和避灾点信息，点击计算按钮之后，通过结果展示页面对算法的计算结果进行可视化展示。本系统尝试为应急疏散人员转运提供参考，服务于可预警灾害下救灾情境的应急预案制定或灾后救援的情境，本系统的主要用户对象是政府和应急疏散的相关服务机构。
+			</p>
+		</div>
+	</div>
+
+</body>
+
+</html>

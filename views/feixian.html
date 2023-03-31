@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <title>结果展示页面</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://api.map.baidu.com/api?v=1.0&type=webgl&ak=VdEuFgNbMyalXhesanUGL5EomtNBQFhm"></script>
+    <script src="https://mapv.baidu.com/build/mapv.min.js"></script>
+    <script src="https://mapv.baidu.com/gl/examples/static/common.js"></script>
+    <script src="https://code.bdstatic.com/npm/mapvgl@1.0.0-beta.156/dist/mapvgl.min.js"></script>
+    <link rel="stylesheet" href="stylesheets/feixian.css" />
+</head>
+
+<body>
+    <div id="map_container"></div>
+    <div class="panel">
+        <span class="show" onclick="togglePanel()">显示面板</span>
+        <span class="close" onclick="togglePanel()">收起</span>
+        <label for="origin">请输入起点城市(多个系列以“；”分隔)</label>
+        <textarea name="origin" id="origin" cols="30" rows="4"></textarea>
+        <label for="destination">请输入终点城市（系列内以“，”分隔，系列以“；”分隔）</label>
+        <textarea name="destination" id="destination" cols="30" rows="5"></textarea>
+        <button type="button" class="create-button" id="changeLine">生成飞线</button>
+        <button type="button" class="create-button" id="drivingroute">生成具体路线</button>
+        <button type="button" class="create-button" id="zjl">最近邻算法</button>
+        <button type="button" class="create-button" id="qfs">启发式算法</button>
+        <button type="button" class="create-button" id="jqs">精确算法</button>
+
+
+        <textarea id='cost' rows="4">此次疏散的费用为：</textarea>
+        <span>
+            <label>
+                启用动画
+                <input id="animate" type="checkbox" />
+            </label>
+            <label>
+                显示坐标
+                <input id="coord" type="checkbox" />
+            </label>
+            <a id="feixian" href="/index" target="_blank" />返回地图页面</a>
+        </span>
+    </div>
+    <script type="text/javascript" src="javascripts/jquery.min.js"></script>
+    <script type="text/javascript" src="javascripts/feixian.js"></script>
+
+</body>
+
+</html>
